@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Swipe Test</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- jquery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!-- touchSwipe plugin -->
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+
+
+</head>
+<body>
+
+	<div id="swipeContainer">
+		<h1><span class="direction">Nothing</span></h1>
+	</div>
+
+	<script type="text/javascript">
+		$(function() {			
+					//Enable swiping...
+			$("#swipeContainer").swipe( {
+				//Generic swipe handler for all directions
+				swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+					$(".direction").text(direction);
+
+					switch (direction) {
+						case "up":
+							var color = "red";
+							break;
+						case "down":
+							var color	= "blue";
+							break;
+						case "right":
+							var color = "green";
+							break;
+						case  "left":
+							var color = "yellow";
+							break;
+						default:
+							break;
+					}
+
+					$("#swipeContainer").css("background-color", color);
+
+				},
+				//Default is 75px, set to 0 for demo so any distance triggers swipe
+			   threshold:0
+			});
+		});
+
+
+	</script>
+
+</body>
+</html>
