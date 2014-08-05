@@ -14,14 +14,14 @@
 </head>
 <body>
 
-	<div id="swipeContainer">
+	<div class="cardContainer" id="cardContainer">
 		<h1><span class="direction">Nothing</span></h1>
 	</div>
 
 	<script type="text/javascript">
 		$(function() {			
 					//Enable swiping...
-			$("#swipeContainer").swipe( {
+			$("#cardContainer").swipe( {
 				//Generic swipe handler for all directions
 				swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 					$(".direction").text(direction);
@@ -43,7 +43,7 @@
 							break;
 					}
 
-					$("#swipeContainer").css("background-color", color);
+					$("#cardContainer").css("background-color", color);
 
 				},
 				//Default is 75px, set to 0 for demo so any distance triggers swipe

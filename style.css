@@ -5,9 +5,14 @@ h1 {
 	font-size: 5em;
 }
 
-#swipeContainer {
-	height:100%;
-	width:100%;
+body {
+	background-color: blue;
+}
+
+.cardContainer {
+	height:80%;
+	width:80%;
+	padding: 10%;
 	text-align:center;
 	background-color:black; 
 }
